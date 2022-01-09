@@ -33,7 +33,10 @@ npm install
 ```bash
 npm start
 ```
-
+3. Package
+```bash
+CSC_IDENTITY_AUTO_DISCOVERY=false yarn dist
+```
 
 ## Licenses
 
