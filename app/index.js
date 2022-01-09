@@ -82,6 +82,15 @@ const nightPDF = (function () {
 			_pdfElement.contentDocument.getElementById('print').dispatchEvent(new Event('click'));
 		});
 
+		ipcRenderer.removeAllListeners('toggle-tabs');
+		ipcRenderer.on('toggle-tabs', (e, msg) => {
+			if (_appContainerElement.style.top == '0px') {
+				_appContainerElement.style.top = '40px';
+			} else {
+				_appContainerElement.style.top = '0px';
+			}
+		});
+
 		// setup dom listeners
 		_defaultButton.addEventListener('click', (e) => {
 			// do default styling

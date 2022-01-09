@@ -162,7 +162,8 @@ exports.menuTemplate = [
         { role: 'zoomin' },
         { role: 'zoomout' },
         { type: 'separator' },
-        { role: 'togglefullscreen' }
+        { role: 'togglefullscreen' },
+        {label: 'Toggle tabs', id: 'toggle-tabs', accelerator: 'CmdOrCtrl+T'},
       ]
     },
     // { role: 'windowMenu' }
@@ -170,6 +171,7 @@ exports.menuTemplate = [
       label: 'Window',
       submenu: [
         { role: 'minimize' },
+        { type: 'separator' },
         { role: 'maximize' }
       ]
     },

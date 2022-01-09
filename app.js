@@ -14,7 +14,8 @@ function createWindow(filename = null) {
 		resizable: false,
 		webPreferences: {
 			plugins: true,
-			nodeIntegration: true
+			nodeIntegration: true,
+			contextIsolation: false
 		},
 		titleBarStyle: 'default',
 		show: false
@@ -57,6 +58,11 @@ function createWindow(filename = null) {
 		menu.getMenuItemById('file-open').click = () => {
 			openNewPDF();
 		};
+
+		menu.getMenuItemById('toggle-tabs').click = () => {
+			const focusedWin = BrowserWindow.getFocusedWindow();
+			focusedWin.webContents.send('toggle-tabs');
+		}
 
 		menu.getMenuItemById('file-print').click = () => {
 			const focusedWin = BrowserWindow.getFocusedWindow();
